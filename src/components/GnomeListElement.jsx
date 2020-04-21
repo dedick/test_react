@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Img from 'react-cool-img';
-// import { Spinner } from 'react-bootstrap';
 
-// import loadingImage from '../assets/loading.jpeg';
+import loadingImage from '../assets/loading.jpeg';
 
 const GnomeElementList = ({ name, thumbnail }) => 
   <ListGroup.Item>
     <Img
-      // placeholder={loadingImage}
+      placeholder={loadingImage}
       src={thumbnail}
       alt="Img not found"
       className="list_gnome_image"

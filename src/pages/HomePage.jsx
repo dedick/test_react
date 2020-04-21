@@ -19,7 +19,7 @@ class HomePage extends Component {
     if (isLoading) {
       return <Loader />;
     } else if (hasErrors){
-      return <p>Error occured</p>;
+      return <p>Error occured..</p>;
     }
     return <VisibleTodoList />;
   }
