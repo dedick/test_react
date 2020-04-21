@@ -26,9 +26,7 @@ export function fetchTodos() {
     try {
       const response = await fetch(config.API_URL);
       const data = await response.json();
-
       const todos = data["Brastlewark"].map(obj => { 
-        console.log(obj);
         if (GnomeModel.checkProperty(obj)) {
           return new GnomeModel(obj);
         }

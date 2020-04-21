@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Todo from './Todo';
+import GnomeListElement from './GnomeListElement';
 
-const TodoList = ({ todos }) => 
+const TodoList = ({ gnomes }) => 
   <ul>
-    {todos.map(todo => {
-      return <Todo key={todo.id} {...todo} />;
+    {gnomes.map(gnome => {
+      return <GnomeListElement key={gnome.id} {...gnome} />;
     }
     )}
   </ul>;
 
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(
+  gnomes: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       isVisible: PropTypes.bool.isRequired,

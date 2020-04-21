@@ -6,7 +6,7 @@ class GnomeModel {
   thumbnail;
   age;
   weight;
-  heigth;
+  height;
   hair_color;
   professions;
   friends;

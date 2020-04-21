@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import TodoList from '../components/TodoList';
+import GnomeList from '../components/GnomeList';
 
 const getVisibleTodos = (todos, searched) => {
   if (searched) {
@@ -9,7 +9,7 @@ const getVisibleTodos = (todos, searched) => {
 };
 
 const mapStateToProps = state => ({
-  todos: getVisibleTodos(state.todos.items, state.filterTodo.search)
+  gnomes: getVisibleTodos(state.todos.items, state.filterTodo.search)
 });
 
-export default connect(mapStateToProps)(TodoList);
+export default connect(mapStateToProps)(GnomeList);
