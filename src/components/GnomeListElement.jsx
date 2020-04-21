@@ -1,17 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Img from 'react-cool-img';
+// import { Spinner } from 'react-bootstrap';
 
-const Todo = ({ isVisible,name }) => 
-  <li
-    style={{
-      textDecoration: isVisible ? 'line-through' : 'none'
-    }}
-  >
+// import loadingImage from '../assets/loading.jpeg';
+
+const GnomeElementList = ({ name, thumbnail }) => 
+  <ListGroup.Item>
+    <Img
+      // placeholder={loadingImage}
+      src={thumbnail}
+      alt="Img not found"
+      className="list_gnome_image"
+    />
     {name}
-  </li>;
+  </ListGroup.Item>;
 
 
-Todo.propTypes = {
+GnomeElementList.propTypes = {
   id: PropTypes.number.isRequired,
   isVisible: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
@@ -24,4 +31,4 @@ Todo.propTypes = {
   friends: PropTypes.array.isRequired
 };
 
-export default Todo;
+export default GnomeElementList;

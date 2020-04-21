@@ -35,3 +35,20 @@ body {
     width: 80%;
     max-width: 600px;
 }
+
+#loader {
+    height: 50vh;
+    display: flex;           /* establish flex container */
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+}
+
+#loader_spinner{
+    text-align: center;
+}
+
+.list_gnome_image {
+    height: 40px;
+    width: auto;
+}
