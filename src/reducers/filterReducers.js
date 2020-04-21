@@ -1,5 +1,4 @@
 
-// import Todo from '../model/Todo'
 import {
   IS_FILTERED
 } from '../actions/actionTypes';

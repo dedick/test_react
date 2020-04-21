@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Todo = ({ isVisible,text }) => 
+const Todo = ({ isVisible,name }) => 
   <li
     style={{
       textDecoration: isVisible ? 'line-through' : 'none'
     }}
   >
-    {text}
+    {name}
   </li>;
 
 
 Todo.propTypes = {
   id: PropTypes.number.isRequired,
   isVisible: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 export default Todo;

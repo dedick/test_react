@@ -1,6 +1,6 @@
 import { RECEIVE_TODO_FAILURE, RECEIVE_TODO_SUCCESS, IS_LOADING, IS_FILTERED } from "./actionTypes";
 import { config } from '../config';
-import TodoModel from '../model/TodoModel';
+import GnomeModel from '../model/GnomeModel';
 
 
 const getTodosSuccess = (todos) => {
@@ -26,20 +26,17 @@ export function fetchTodos() {
     try {
       const response = await fetch(config.API_URL);
       const data = await response.json();
-      const todos = data.map(obj => { 
-        if (TodoModel.checkProperty(obj)) {
-          return new TodoModel(obj.id, obj.text);
+
+      const todos = data["Brastlewark"].map(obj => { 
+        console.log(obj);
+        if (GnomeModel.checkProperty(obj)) {
+          return new GnomeModel(obj);
         }
-        return;
-      });
+        return null;
+      }).filter(obj => obj != null);
       dispatch(getTodosSuccess(todos));
     } catch (error) {
       dispatch(getTodosFailure());
     }
   };
-}
-
-export function updateFilterValue(searched) {
-  console.log("ACTIONS FILTER");
-  filterTodo(searched);
 }
