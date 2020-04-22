@@ -2,35 +2,38 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card,
   Image,
-  Accordion 
+  Accordion,
+  ListGroup
 } from 'react-bootstrap';
 
 
 const GnomeDetailRender = ({ gnome }) => {
   return (
-    <Card className="text-center" style={{ margin: "0 auto" }}>
+    <Card border="light" className="text-center" style={{ margin: "0 auto" }}>
       <Card.Header>{gnome.name}</Card.Header>
       <Card.Body>
         <Image src={gnome.thumbnail} alt={gnome.name} thumbnail/>
-
         <Accordion defaultActiveKey="0">
           <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0">
-                        Carateristics
+              Carateristics
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <Card.Text>
-                                Age: {gnome.age}
+                  Age: {gnome.age}
                 </Card.Text>
                 <Card.Text>
-                                Hair color: {gnome.hair_color}
+                  Hair color: {gnome.hair_color}
                 </Card.Text>
                 <Card.Text>
-                                Height: {gnome.height}
+                  Height: {gnome.height}
                 </Card.Text>
                 <Card.Text>
-                                Weight: {gnome.weight}
+                  Weight: {gnome.weight}
+                </Card.Text>
+                <Card.Text>
+                  Sexe: { gnome.gender }
                 </Card.Text>
               </Card.Body>
             </Accordion.Collapse>
@@ -42,7 +45,11 @@ const GnomeDetailRender = ({ gnome }) => {
             <Accordion.Collapse eventKey="1">
               <Card.Body>
                 <Card.Text>
-                  {gnome.professions.map((index) => { return index + " "; } )}
+                  <ListGroup className="list-group-flush">
+                    { gnome.professions.map((index, i) => {
+                      return <ListGroup.Item key={i}>{index}</ListGroup.Item>; 
+                    })}
+                  </ListGroup>
                 </Card.Text>
               </Card.Body>
             </Accordion.Collapse>
@@ -54,7 +61,11 @@ const GnomeDetailRender = ({ gnome }) => {
             <Accordion.Collapse eventKey="2">
               <Card.Body>
                 <Card.Text>
-                  {gnome.friends.map((index) => { return index + " "; } )}
+                  <ListGroup className="list-group-flush">
+                    {gnome.friends.map((index, i) => {
+                      return <ListGroup.Item key={i}>{index}</ListGroup.Item>; 
+                    })}
+                  </ListGroup>
                 </Card.Text>
               </Card.Body>
             </Accordion.Collapse>
