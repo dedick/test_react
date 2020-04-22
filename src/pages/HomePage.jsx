@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import VisibleTodoList from '../containers/VisibleTodoList';
+import VisibleGnomeList from '../containers/VisibleGnomeList';
 import FilterInput from '../containers/FilterInput';
 
 import { fetchGnomeList } from '../actions/actions';
@@ -24,7 +24,7 @@ class HomePage extends Component {
     } else if (hasErrors){
       return <p>Error occured..</p>;
     }
-    return <VisibleTodoList />;
+    return <VisibleGnomeList />;
   }
   render() {
     return (

@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
-import { filterList,
+
+import {
+  filterList,
   updatePageNumber,
-  updateNumberElementDisplay } from '../actions/actions';
+  updateNumberElementDisplay 
+} from '../actions/actions';
+
 import Filter from '../components/Filter';
 
 const totalPage = (numberElementFiltered, numberElementToDisplay) => {

@@ -10,7 +10,6 @@ const Filter = ({ callbackInputSearch,
   totalPage,
   page
 }) => {
-  console.log(totalPage);
   return (
     <div className="center margin_top">
       <div>
