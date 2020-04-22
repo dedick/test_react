@@ -2,7 +2,10 @@ import React from 'react';
 import { Pagination } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-const PaginationRender = ({ totalPage, page, callback }) => {
+const PaginationRender = ({ page, callback, elementsFiltered, numberElementToDisplay }) => {
+
+  const totalPage = Math.ceil(elementsFiltered / numberElementToDisplay);
+
   const displayPagination = () => {
     if (totalPage > 1) {
       return (
@@ -27,7 +30,8 @@ const PaginationRender = ({ totalPage, page, callback }) => {
 PaginationRender.propTypes = {
   callback: PropTypes.func.isRequired,
   page: PropTypes.number.isRequired,
-  totalPage: PropTypes.number.isRequired
+  elementsFiltered: PropTypes.number.isRequired,
+  numberElementToDisplay: PropTypes.number.isRequired
 };
 
 export default PaginationRender;

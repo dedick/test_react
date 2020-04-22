@@ -4,7 +4,8 @@ import {
   IS_LOADING,
   IS_FILTERED,
   PAGE_UPDATE,
-  NUMBER_ELEMENT_DISPLAY } from "./actionTypes";
+  NUMBER_ELEMENT_DISPLAY,
+  NUMBER_ELEMENT_FILTERED } from "./actionTypes";
 import { config } from '../config';
 import GnomeModel from '../model/GnomeModel';
 
@@ -28,8 +29,12 @@ export const updatePageNumber = (page) => {
   return { type: PAGE_UPDATE, payload: page };
 };
 
-export const updateNumberElementDisplay = (page) => {
-  return { type: NUMBER_ELEMENT_DISPLAY, payload: parseInt(page) };
+export const updateNumberElementDisplay = (number) => {
+  return { type: NUMBER_ELEMENT_DISPLAY, payload: parseInt(number) };
+};
+
+export const updateNumberElementFiltered = (number) => {
+  return { type: NUMBER_ELEMENT_FILTERED, payload: parseInt(number) };
 };
 
 export function fetchGnomeList() {

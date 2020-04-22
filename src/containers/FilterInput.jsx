@@ -8,14 +8,11 @@ import {
 
 import Filter from '../components/Filter';
 
-const totalPage = (numberElementFiltered, numberElementToDisplay) => {
-  const result = Math.ceil(numberElementFiltered / numberElementToDisplay);
-  return result;
-};
-
 const mapStateToProps = (state) => ({
-  totalPage: totalPage(state.filter.numberElementFiltered, state.filter.numberElementToDisplay),
-  page: state.filter.pageNumber
+  totalPage: state.filter.totalPage,
+  page: state.filter.pageNumber,
+  elementsFiltered: state.filter.numberElementFiltered,
+  numberElementToDisplay: state.filter.numberElementToDisplay
 });
 
 const mapDispatchToProps = dispatch => ({

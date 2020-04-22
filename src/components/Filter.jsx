@@ -7,8 +7,9 @@ import FilterItemsNumberDisplay from './FilterItemsNumberDisplay';
 const Filter = ({ callbackInputSearch, 
   callbackNumberElementDisplay, 
   callbackPageNumber, 
-  totalPage,
-  page
+  page,
+  elementsFiltered,
+  numberElementToDisplay
 }) => {
   return (
     <div className="center margin_top">
@@ -16,7 +17,11 @@ const Filter = ({ callbackInputSearch,
         <Input callback={callbackInputSearch} />
         <FilterItemsNumberDisplay callback={callbackNumberElementDisplay} />
       </div>
-      <PaginationRender callback={callbackPageNumber} totalPage={totalPage} page={page}/>
+      <PaginationRender 
+        callback={callbackPageNumber} 
+        page={page} 
+        elementsFiltered={elementsFiltered}
+        numberElementToDisplay={numberElementToDisplay}/>
     </div>
   );
 };
@@ -25,8 +30,9 @@ Filter.propTypes = {
   callbackInputSearch: PropTypes.func.isRequired,
   callbackPageNumber: PropTypes.func.isRequired,
   callbackNumberElementDisplay: PropTypes.func.isRequired,
-  totalPage: PropTypes.number.isRequired,
-  page: PropTypes.number.isRequired
+  page: PropTypes.number.isRequired,
+  elementsFiltered: PropTypes.number.isRequired,
+  numberElementToDisplay: PropTypes.number.isRequired
 };
 
 export default Filter;
