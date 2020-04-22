@@ -1,25 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { ListGroup, Col, Row } from 'react-bootstrap';
 import Img from 'react-cool-img';
 
 import loadingImage from '../assets/loading.jpeg';
 
 const GnomeElementList = ({ name, thumbnail }) => 
   <ListGroup.Item>
-    <Img
-      placeholder={loadingImage}
-      src={thumbnail}
-      alt="Img not found"
-      className="list_gnome_image"
-    />
-    {name}
+    <Row>
+      <Col>
+        <Img
+          placeholder={loadingImage}
+          src={thumbnail}
+          alt="Img not found"
+          className="list_gnome_image"
+        />
+      </Col>
+      <Col>
+        {name}
+      </Col>
+    </Row>
   </ListGroup.Item>;
 
 
 GnomeElementList.propTypes = {
   id: PropTypes.number.isRequired,
-  isVisible: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   thumbnail: PropTypes.string.isRequired,
   age: PropTypes.number.isRequired,
