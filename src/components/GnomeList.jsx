@@ -4,15 +4,7 @@ import GnomeListElement from './GnomeListElement';
 import { Row, Col } from 'react-bootstrap';
 
 const GnomeList = ({ gnomes, gnomesFilteredNumber, callbackElementFiltered }) => {
-
-  // const length = gnomes.length;
-  // callbackElementFiltered(length);
-
-  console.log("USESTATE",useState());
-
   useEffect(() => {
-    
-    console.log("GNOMELIST", "UPDATE LENGTH " + gnomes.length);
     callbackElementFiltered(gnomesFilteredNumber);
   }, [gnomesFilteredNumber]);
   

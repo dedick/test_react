@@ -3,7 +3,6 @@ import { updateNumberElementFiltered } from '../actions/actions';
 import GnomeList from '../components/GnomeList';
 
 const getVisibleTodos = (todos, filter) => {
-  console.log("GETVISIBLETODOS");
   let result;
   let { search, pageNumber, numberElementToDisplay } = filter;
 

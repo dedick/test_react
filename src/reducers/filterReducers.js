@@ -13,8 +13,6 @@ const initialState = {
 };
 
 function filter(state = initialState, action) {
-  console.log("FILTER MODERFUCKER");
-  console.log(state);
   switch (action.type) {
   case IS_FILTERED:
     return { ...state, search : action.payload, pageNumber: 1 };
