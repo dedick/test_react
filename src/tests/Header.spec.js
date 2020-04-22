@@ -6,6 +6,6 @@ describe('Header component', () => {
   it('Get Brand value', () => {
     const wrapper = shallow(<Header />);
     const text = wrapper.find('span').text();
-    expect(text).toEqual('React Bootstrap');
+    expect(text).toEqual('Brastlewark‘s people');
   });
 });
