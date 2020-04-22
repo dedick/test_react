@@ -18,7 +18,6 @@ const PaginationRender = ({ totalPage, page, callback }) => {
   };
   
   return (
-    
     <div className="margin_top">
       { displayPagination() }    
     </div>

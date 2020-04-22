@@ -8,7 +8,6 @@ import {
 import { config } from '../config';
 import GnomeModel from '../model/GnomeModel';
 
-
 const getTodosSuccess = (todos) => {
   return { type: RECEIVE_TODO_SUCCESS, payload: todos };
 };
@@ -32,7 +31,6 @@ export const updatePageNumber = (page) => {
 export const updateNumberElementDisplay = (page) => {
   return { type: NUMBER_ELEMENT_DISPLAY, payload: parseInt(page) };
 };
-
 
 export function fetchGnomeList() {
   return async dispatch => {

@@ -10,9 +10,9 @@ import { Card,
   Button
 } from 'react-bootstrap';
 
-
 const GnomeDetailRender = ({ gnome }) => {
   let history = useHistory();
+
   return (
     <div>
       <Button variant="warning" className="margin_top" 
@@ -43,7 +43,7 @@ const GnomeDetailRender = ({ gnome }) => {
                   Weight: {gnome.weight}
                   </Card.Text>
                   <Card.Text>
-                  Sexe: { gnome.gender }
+                  Sexe: { gnome.isMale ? "M" : "F" }
                   </Card.Text>
                 </Card.Body>
               </Accordion.Collapse>
@@ -54,13 +54,11 @@ const GnomeDetailRender = ({ gnome }) => {
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="1">
                 <Card.Body>
-                  <Card.Text>
-                    <ListGroup className="list-group-flush">
-                      { gnome.professions.map((index, i) => {
-                        return <ListGroup.Item key={i}>{index}</ListGroup.Item>; 
-                      })}
-                    </ListGroup>
-                  </Card.Text>
+                  <ListGroup className="list-group-flush">
+                    { gnome.professions.map((index, i) => {
+                      return <ListGroup.Item key={i}>{index}</ListGroup.Item>; 
+                    })}
+                  </ListGroup>
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
@@ -70,19 +68,17 @@ const GnomeDetailRender = ({ gnome }) => {
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="2">
                 <Card.Body>
-                  <Card.Text>
-                    <ListGroup className="list-group-flush">
-                      {gnome.friends.map((index, i) => {
-                        return <ListGroup.Item key={i}>{index}</ListGroup.Item>; 
-                      })}
-                    </ListGroup>
-                  </Card.Text>
+                  <ListGroup className="list-group-flush">
+                    {gnome.friends.map((index, i) => {
+                      return <ListGroup.Item key={i}>{index}</ListGroup.Item>; 
+                    })}
+                  </ListGroup>
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
           </Accordion>
         </Card.Body>
-      </Card>`
+      </Card>
     </div>
   );
 };
