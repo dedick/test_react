@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Redirect,
   useHistory
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -12,7 +13,7 @@ import { Card,
 
 const GnomeDetailRender = ({ gnome }) => {
   let history = useHistory();
-
+  if (!gnome) { return <Redirect to='/' />; }
   return (
     <div>
       <Button variant="warning" className="margin_top" 
@@ -84,7 +85,7 @@ const GnomeDetailRender = ({ gnome }) => {
 };
 
 GnomeDetailRender.propTypes = {
-  gnome: PropTypes.object.isRequired
+  gnome: PropTypes.object
 };
 
 export default GnomeDetailRender;
