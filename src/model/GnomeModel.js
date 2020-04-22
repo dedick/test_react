@@ -1,5 +1,3 @@
-
-
 class GnomeModel {
   id;
   name;
@@ -10,6 +8,7 @@ class GnomeModel {
   hair_color;
   professions;
   friends;
+  gender;
 
   constructor(data) {
     Object.assign(this, data);

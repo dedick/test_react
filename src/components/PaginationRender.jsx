@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 const PaginationRender = ({ totalPage, page, callback }) => {
   const displayPagination = () => {
-    console.log("total Page: " + totalPage);
-    console.log("page current: "+ page);
     if (totalPage > 1) {
       return (
         <Pagination className="container_pagination">

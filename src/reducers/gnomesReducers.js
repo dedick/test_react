@@ -13,7 +13,6 @@ const initialState = {
 };
 
 function gnomes(state = initialState, action) {
-  console.log("Reducers", action);
   switch (action.type) {
   case RECEIVE_TODO_SUCCESS:
     return { ...state, isLoading: false, items: action.payload };

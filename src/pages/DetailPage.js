@@ -10,12 +10,6 @@ import DetailGnome from '../containers/DetailGnome';
 const DetailPage = () => {
   let { slug } = useParams();
 
-  // useEffect(() => {
-  //   console.log(slug);
-  // console.log(characters);
-  // dispatch(fetchSpecificCharacter(slug));
-  // }, [dispatch]);
-  console.log(slug);
   const displayInformations = () => {
     return <DetailGnome id={slug} />;
   };

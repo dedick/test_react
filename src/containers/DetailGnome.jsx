@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import GnomeDetailRender from '../components/GnomeDetailRender';
 
 const getGnome = (items, props) => {
-  console.log(items);
-  console.log(props);
   const result = items.filter(item => item.id == props.id);
   if (result.length > 0){
     return result.shift();
