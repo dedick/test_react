@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import todos from './todoReducers';
-import filterTodo from './filterReducers';
+import gnomes from './gnomesReducers';
+import filter from './filterReducers';
 
 const rootReducer = combineReducers({
-  todos,
-  filterTodo
+  gnomes,
+  filter
 });
   
 export default rootReducer;

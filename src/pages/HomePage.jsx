@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 import VisibleTodoList from '../containers/VisibleTodoList';
-import { fetchTodos } from '../actions/actions';
 import FilterInput from '../containers/FilterInput';
+
+import { fetchGnomeList } from '../actions/actions';
+
 import Loader from '../components/Loader';
 
 class HomePage extends Component {
@@ -12,7 +15,7 @@ class HomePage extends Component {
   }
   componentDidMount(){
     const { dispatch } = this.props;
-    dispatch(fetchTodos());
+    dispatch(fetchGnomeList());
   }
   renderize() {
     const { isLoading, hasErrors } = this.props;
@@ -27,12 +30,13 @@ class HomePage extends Component {
     return (
       <div>
         <FilterInput />
+        <hr/>
         { this.renderize() }
-           
       </div>
     );
   }
 }
+
 HomePage.propTypes = {
   dispatch: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
@@ -42,9 +46,9 @@ HomePage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    isLoading: state.todos.isLoading,
-    todos: state.todos.items,
-    hasErrors: state.todos.hasErrors,
+    isLoading: state.gnomes.isLoading,
+    todos: state.gnomes.items,
+    hasErrors: state.gnomes.hasErrors,
   };
 }
 

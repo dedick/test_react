@@ -1,19 +1,28 @@
 
 import {
-  IS_FILTERED
+  IS_FILTERED,
+  PAGE_UPDATE,
+  NUMBER_ELEMENT_DISPLAY
 } from '../actions/actionTypes';
 
 const initialState = {
-  search: ""
+  search: "",
+  pageNumber: 1,
+  numberElementToDisplay: 10,
+  numberElementFiltered: 1
 };
 
-function filterTodo(state = initialState, action) {
+function filter(state = initialState, action) {
   switch (action.type) {
   case IS_FILTERED:
-    return { ...state, search : action.payload };    
+    return { ...state, search : action.payload, pageNumber: 1 };
+  case PAGE_UPDATE:
+    return { ...state, pageNumber: action.payload };
+  case NUMBER_ELEMENT_DISPLAY:
+    return { ...state, numberElementToDisplay: action.payload, pageNumber: 1 };
   default:
     return state;
   }
 }
 
-export default filterTodo;
+export default filter;

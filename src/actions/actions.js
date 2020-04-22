@@ -1,4 +1,10 @@
-import { RECEIVE_TODO_FAILURE, RECEIVE_TODO_SUCCESS, IS_LOADING, IS_FILTERED } from "./actionTypes";
+import { 
+  RECEIVE_TODO_FAILURE,
+  RECEIVE_TODO_SUCCESS,
+  IS_LOADING,
+  IS_FILTERED,
+  PAGE_UPDATE,
+  NUMBER_ELEMENT_DISPLAY } from "./actionTypes";
 import { config } from '../config';
 import GnomeModel from '../model/GnomeModel';
 
@@ -15,12 +21,20 @@ function requestLoading() {
   return { type: IS_LOADING };
 }
 
-export function filterTodo(searched){
-  console.log("FILTERTODO",searched);
+export function filterList(searched){
   return { type: IS_FILTERED, payload: searched };
 }
 
-export function fetchTodos() {
+export const updatePageNumber = (page) => {
+  return { type: PAGE_UPDATE, payload: page };
+};
+
+export const updateNumberElementDisplay = (page) => {
+  return { type: NUMBER_ELEMENT_DISPLAY, payload: parseInt(page) };
+};
+
+
+export function fetchGnomeList() {
   return async dispatch => {
     dispatch(requestLoading());
     try {

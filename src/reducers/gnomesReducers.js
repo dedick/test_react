@@ -12,7 +12,7 @@ const initialState = {
   hasErrors: false
 };
 
-function todos(state = initialState, action) {
+function gnomes(state = initialState, action) {
   console.log("Reducers", action);
   switch (action.type) {
   case RECEIVE_TODO_SUCCESS:
@@ -26,4 +26,4 @@ function todos(state = initialState, action) {
   }
 }
 
-export default todos;
+export default gnomes;
