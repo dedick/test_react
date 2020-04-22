@@ -17,8 +17,8 @@ GnomeList.propTypes = {
   gnomes: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      isVisible: PropTypes.bool.isRequired,
-      name: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,
 };
