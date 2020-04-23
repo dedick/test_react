@@ -3,7 +3,7 @@ import {
   PAGE_UPDATE,
   NUMBER_ELEMENT_DISPLAY,
   NUMBER_ELEMENT_FILTERED
-} from '../actions/actionTypes';
+} from '../constants/ActionTypes';
 
 const initialState = {
   search: "",

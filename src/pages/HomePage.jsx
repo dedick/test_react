@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import VisibleGnomeList from '../containers/VisibleGnomeList';
 import FilterInput from '../containers/FilterInput';
 
-import { fetchGnomeList } from '../actions/actions';
+import { fetchGnomeList } from '../actions/Actions';
 
 import Loader from '../components/Loader';
 

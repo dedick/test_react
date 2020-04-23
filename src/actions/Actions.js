@@ -5,7 +5,7 @@ import {
   IS_FILTERED,
   PAGE_UPDATE,
   NUMBER_ELEMENT_DISPLAY,
-  NUMBER_ELEMENT_FILTERED } from "./actionTypes";
+  NUMBER_ELEMENT_FILTERED } from "../constants/ActionTypes";
 import { config } from '../config';
 import GnomeModel from '../model/GnomeModel';
 
@@ -51,6 +51,7 @@ export function fetchGnomeList() {
       }).filter(obj => obj != null);
       dispatch(getTodosSuccess(todos));
     } catch (error) {
+      console.log(error);
       dispatch(getTodosFailure());
     }
   };

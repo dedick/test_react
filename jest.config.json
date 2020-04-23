@@ -1,5 +1,6 @@
 {
     "testRegex": "((\\.|/*.)(spec))\\.js?$",
     "rootDir": "src/",
-    "setupFiles": ["./setupTests.js"]
+    "setupFiles": ["./setupTests.js"],
+    "automock": false
 }

@@ -4,7 +4,7 @@ import { ListGroup, Col, Row } from 'react-bootstrap';
 import Img from 'react-cool-img';
 import { Link } from 'react-router-dom';
 
-import loadingImage from '../assets/loading.jpeg';
+// import loadingImage from '../assets/loading.jpeg';
 
 const GnomeElementList = ({ name, thumbnail, id }) => 
   <ListGroup.Item >
@@ -12,13 +12,13 @@ const GnomeElementList = ({ name, thumbnail, id }) =>
       <Row>
         <Col>
           <Img
-            placeholder={loadingImage}
+            // placeholder={loadingImage}
             src={thumbnail}
-            alt="Img not found"
+            alt={name}
             className="list_gnome_image"
           />
         </Col>
-        <Col>
+        <Col className="list_gnome_name">
           {name}
         </Col>
       </Row>

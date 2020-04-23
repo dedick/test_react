@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateNumberElementFiltered } from '../actions/actions';
+import { updateNumberElementFiltered } from '../actions/Actions';
 import GnomeList from '../components/GnomeList';
 
 const getVisibleTodos = (todos, filter) => {

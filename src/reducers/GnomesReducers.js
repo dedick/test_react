@@ -4,7 +4,7 @@ import {
   RECEIVE_TODO_SUCCESS,
   RECEIVE_TODO_FAILURE,
   IS_LOADING
-} from '../actions/actionTypes';
+} from '../constants/ActionTypes';
 
 const initialState = {
   items: [],

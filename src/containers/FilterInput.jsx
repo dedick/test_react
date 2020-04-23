@@ -4,7 +4,7 @@ import {
   filterList,
   updatePageNumber,
   updateNumberElementDisplay 
-} from '../actions/actions';
+} from '../actions/Actions';
 
 import Filter from '../components/Filter';
 

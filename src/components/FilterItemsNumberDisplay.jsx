@@ -16,7 +16,6 @@ const FilterItemNumberDisplay = ({ callback }) => {
 
 FilterItemNumberDisplay.propTypes = {
   callback: PropTypes.func.isRequired,
-  // totalItems: PropTypes.number.isRequired
 };
 
 export default FilterItemNumberDisplay;

@@ -23,14 +23,14 @@ const GnomeDetailRender = ({ gnome }) => {
       <Card border="light" className="text-center">
         <Card.Header>{gnome.name}</Card.Header>
         <Card.Body>
-          <Image src={gnome.thumbnail} alt={gnome.name} thumbnail/>
+          <Image className="detail_image" src={gnome.thumbnail} alt={gnome.name} thumbnail/>
           <Accordion defaultActiveKey="0">
             <Card>
               <Accordion.Toggle as={Card.Header} eventKey="0">
               Carateristics
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
-                <Card.Body>
+                <Card.Body className="detail">
                   <Card.Text>
                   Age: {gnome.age}
                   </Card.Text>
@@ -55,7 +55,7 @@ const GnomeDetailRender = ({ gnome }) => {
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="1">
                 <Card.Body>
-                  <ListGroup className="list-group-flush">
+                  <ListGroup className="list-group-flush detail_professions">
                     { gnome.professions.map((index, i) => {
                       return <ListGroup.Item key={i}>{index}</ListGroup.Item>; 
                     })}
@@ -69,7 +69,7 @@ const GnomeDetailRender = ({ gnome }) => {
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="2">
                 <Card.Body>
-                  <ListGroup className="list-group-flush">
+                  <ListGroup className="list-group-flush detail_friends">
                     {gnome.friends.map((index, i) => {
                       return <ListGroup.Item key={i}>{index}</ListGroup.Item>; 
                     })}
